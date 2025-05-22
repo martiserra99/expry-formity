@@ -4,7 +4,7 @@ import { Formity, type OnReturn, type ReturnOutput } from "@formity/react";
 
 import { Output } from "./components/output";
 
-import { schema, type Values } from "./schema";
+import { schema, type Values } from "./schema-expry";
 
 export default function App() {
   const [output, setOutput] = useState<ReturnOutput<Values> | null>(null);
