@@ -1,5 +1,5 @@
 {
-  "name": "formity-tutorial",
+  "name": "expry-formity",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,7 +13,7 @@
     "@expry/basic": "^1.0.0",
     "@expry/formity": "^1.0.0",
     "@expry/system": "^1.0.0",
-    "@formity/react": "^1.0.0",
+    "@formity/react": "^1.0.6",
     "@headlessui/react": "^2.2.3",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.0.1",

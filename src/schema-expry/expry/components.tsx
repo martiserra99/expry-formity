@@ -102,8 +102,8 @@ export type ComponentsOperations = {
 
 export const componentsOperations: Executions<ComponentsOperations> = {
   jsx$multiStep: (args, vars, expry) => {
-    const onNext = expry(args.onNext, vars) as OnNext;
-    const onBack = expry(args.onBack, vars) as OnBack;
+    const onNext = expry(args.onNext, vars) as OnNext<Record<string, unknown>>;
+    const onBack = expry(args.onBack, vars) as OnBack<Record<string, unknown>>;
     const children = expry(args.children, vars) as ReactNode;
     return (
       <MultiStep onNext={onNext} onBack={onBack}>

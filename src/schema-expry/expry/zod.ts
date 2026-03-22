@@ -1,5 +1,4 @@
 import type { Executions } from "@expry/system";
-import type { Resolver } from "react-hook-form";
 import type { ZodType } from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,7 +7,7 @@ import { z } from "zod";
 export type ZodOperations = {
   zod$resolver: {
     params: unknown;
-    return: Resolver;
+    return: ReturnType<typeof zodResolver>;
   };
   zod$object: {
     params: Record<string, unknown>;
@@ -40,8 +39,8 @@ export type ZodOperations = {
 
 export const zodOperations: Executions<ZodOperations> = {
   zod$resolver: (args, vars, expry) => {
-    const zod = expry(args, vars) as ZodType;
-    return zodResolver(zod);
+    const zod = expry(args, vars) as Parameters<typeof zodResolver>[0];
+    return zodResolver(zod) as ReturnType<typeof zodResolver>;
   },
   zod$object: (args, vars, expry) => {
     const object = Object.fromEntries(
